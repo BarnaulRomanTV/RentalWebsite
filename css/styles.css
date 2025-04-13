@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#tenants {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tenant {
+    margin: 10px;
+    text-align: center;
+}
+
+.tenant img {
+    width: 112px; /* Установите желаемую ширину */
+    height: auto; /* Высота будет автоматически подстраиваться */
+    max-width: 100%; /* Ограничение максимальной ширины */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
