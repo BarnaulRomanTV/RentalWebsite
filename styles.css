@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для секции арендаторов */
+#tenants {
+    text-align: center; /* Центрирование текста */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.tenant {
+    display: inline-block; /* Позволяет элементам располагаться в строку */
+    margin: 20px; /* Отступы между арендаторами */
+    max-width: 300px; /* Максимальная ширина блока арендатора */
+}
+
+.tenant img {
+    max-width: 100%; /* Адаптивная ширина изображений */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
