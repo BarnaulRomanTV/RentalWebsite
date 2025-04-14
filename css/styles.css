@@ -19,23 +19,19 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Стили для секции арендаторов */
 #tenants {
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center; /* Центрирование текста */
+    margin: 20px 0; /* Отступы сверху и снизу */
 }
 
 .tenant {
-    margin: 10px;
-    text-align: center;
+    display: inline-block; /* Позволяет элементам располагаться в строку */
+    margin: 20px; /* Отступы между арендаторами */
+    max-width: 300px; /* Максимальная ширина блока арендатора */
 }
 
 .tenant img {
-    width: 112px; /* Установите желаемую ширину */
-    height: auto; /* Высота будет автоматически подстраиваться */
-    max-width: 100%; /* Ограничение максимальной ширины */
-}
-
-img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* Адаптивная ширина изображений */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
 }
