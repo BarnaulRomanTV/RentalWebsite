@@ -1,37 +1,777 @@
+/* Общие стили для body */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-    background-color: #007BFF;
-    color: white;
-    padding: 20px;
+/* Универсальная настройка изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Специфичные стили для секции 'about' */
+#about img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Центрирование текста в заголовках */
+h1, h2, h3 {
     text-align: center;
 }
 
+/* Основная секция с описанием */
 section {
-    margin: 20px;
-    padding: 20px;
+    padding: 2rem;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Секция контактов */
+.contact-info {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+/* Лого компании */
+.logo {
+    float: left;
+    margin-right: 1em;
+}
+
+/* Цвет фона кнопки */
+.button-primary {
+    background-color: #ffcc00;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Эффект нажатия кнопки */
+.button-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Настройки шрифтов */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Размер контактных номеров телефона */
+.phone-number {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Размеры логотипа */
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Макет галереи */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Ховер эффект на галерею */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+.gallery-item a {
+    z-index: 1;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Миниатюры изображений */
+.thumbnail {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Навигационные ссылки */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Форма обратной связи */
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #ffcc00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #ffbb00;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    clear: both;
+}
+
+/* Верхний колонтитул */
+header {
+    background-color: #ffcc00;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Горизонтальное выравнивание элементов */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Класс для карусели */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-slideshow {
+    display: flex;
+    animation-name: slideshowAnimation;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slideshowAnimation {
+    from {transform: translateX(0);}
+    to {transform: translateX(-100%);}
+}
+
+/* Установка размеров фото фасадов зданий */
+.building-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Оформление списка помещений */
+.property-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Список арендуемых площадей */
+.area-list {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+/* Увеличение шрифта для важной информации */
+.highlighted-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Основной контейнер галереи */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: stretch;
+}
+
+/* Настройки галереи */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Панель навигации */
+.nav-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ffcc00;
+}
+
+/* Полоса прогресса */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-indicator {
+    height: 100%;
+    background-color: #ffcc00;
+    width: 50%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Всплывающее окно */
+.popup-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.show-popup {
+    display: block;
+}
+
+.popup-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Прелоадер страницы */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #ffcc00;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Блок вопросов и ответов */
+.faq-section {
+    margin-top: 20px;
+}
+
+.question {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.answer {
+    display: none;
+    margin-bottom: 10px;
+}
+
+.opened {
+    display: block;
+}
+
+/* Номер телефона */
+.phone-number {
+    font-size: 24px;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* Градиенты и тени */
+.gradient-box {
+    background: linear-gradient(to right, #ffcc00, #ffffff);
+    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для секции арендаторов */
-#tenants {
-    text-align: center; /* Центрирование текста */
-    margin: 20px 0; /* Отступы сверху и снизу */
+/* Типографика */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
-.tenant {
-    display: inline-block; /* Позволяет элементам располагаться в строку */
-    margin: 20px; /* Отступы между арендаторами */
-    max-width: 300px; /* Максимальная ширина блока арендатора */
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
-.tenant img {
-    max-width: 100%; /* Адаптивная ширина изображений */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 18px;
+    color: #666;
+    padding: 10px;
+    border-left: 5px solid #ffcc00;
+    margin: 20px 0;
+}
+
+/* Акцентные цвета */
+.accent-color {
+    color: #ffcc00;
+}
+
+/* Диалоговые окна */
+.dialog-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Светлая палитра цветов */
+.light-theme {
+    background-color: #fafafa;
+    color: #333;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Параметры анимации */
+.animated-element {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Стили таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead th {
+    background-color: #ffcc00;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Стилизация формы поиска */
+.search-form {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 200px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Круглые аватарки */
+.avatar-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar-circle img {
+    width: 100%;
+    height: auto;
+}
+
+/* Плавающие карточки */
+.floating-card {
+    position: relative;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.floating-card:hover {
+    transform: scale(1.05);
+}
+
+/* Форматы даты и времени */
+.date-format {
+    font-size: 14px;
+    color: #666;
+}
+
+.time-format {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Логотип */
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+/* Настройки кнопок */
+button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ffbb00;
+}
+
+/* Шаблон карточек новостей */
+.news-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.news-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.news-excerpt {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.news-date {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Модальное окно */
+.modal-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.show-modal {
+    display: block;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Атрибуты HTML5 */
+input[type="email"]::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+/* Календарь */
+.calendar-day {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.selected-day {
+    background-color: #ffcc00;
+    color: white;
+}
+
+/* Популярные товары */
+.popular-product {
+    display: inline-block;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.product-image {
+    width: 100px;
+    height: auto;
+}
+
+.product-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #ffcc00;
+}
+
+/* Горизонтальная прокрутка товаров */
+.horizontal-scroll {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.scroll-item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Значки социальных сетей */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #ffcc00;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    color: #ffbb00;
+}
+
+/* Закладки страниц */
+.bookmark-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #ffcc00;
+    cursor: pointer;
+}
+
+.bookmarked {
+    color: red;
+}
+
+/* Пользовательские индикаторы состояния */
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.online-status {
+    background-color: green;
+}
+
+.offline-status {
+    background-color: red;
+}
+
+/* Заголовки колонок */
+.column-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Боковая панель навигации */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.side-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.side-nav a:hover {
+    color: #ffcc00;
+}
+
+/* Вспомогательные классы */
+.clear
