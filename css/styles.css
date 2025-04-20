@@ -106,6 +106,16 @@ p {
     font-size: 18px;
 }
 
+.phone-number i, .phone-number img {
+    color: #0088cc; /* Синяя иконка Telegram */
+    vertical-align: middle; /* Центровка иконки вертикально */
+}
+
+.phone-number a {
+    color: inherit; /* Наследует цвет текста */
+    text-decoration: underline; /* Линия подчеркивания */
+}
+
 /* Размеры логотипа */
 .logo img {
     max-width: 100px;
